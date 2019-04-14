@@ -18,3 +18,7 @@ from nltk.stem.snowball import SnowballStemmer
 from nltk.stem import WordNetLemmatizer 
 from nltk.corpus import wordnet as wn 
 from nltk.corpus import stopwords
+
+# sklearn methods for Preparing the Term-Doc Matrix 
+from sklearn.feature_extraction.text import CountVectorizer 
+from sklearn.feature_extraction.text import TfidfTransformer
