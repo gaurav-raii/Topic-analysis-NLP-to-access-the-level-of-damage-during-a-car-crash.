@@ -27,3 +27,8 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.decomposition import LatentDirichletAllocation 
 from sklearn.decomposition import TruncatedSVD 
 from sklearn.decomposition import NMF
+
+nltk.download('punkt') 
+nltk.download('averaged_perceptron_tagger') 
+nltk.download('stopwords') 
+nltk.download('wordnet')
