@@ -38,3 +38,9 @@ pd.set_option('max_colwidth', 32000)
 
 # Read California Chardonnay Reviews 
 df = pd.read_excel("C:/Users/gaura/Desktop/stat 656/week 11/week 11 assignment/GMC_Complaints.xlsx")
+
+# Setup program constants and reviews 
+n_reviews = len(df['description']) 
+s_words = 'english' 
+ngram = (1,2) 
+reviews = df['description']
