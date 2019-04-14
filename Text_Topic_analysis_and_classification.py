@@ -22,3 +22,8 @@ from nltk.corpus import stopwords
 # sklearn methods for Preparing the Term-Doc Matrix 
 from sklearn.feature_extraction.text import CountVectorizer 
 from sklearn.feature_extraction.text import TfidfTransformer
+
+# sklearn methods for Extracting Topics using the Term-Doc Matrix 
+from sklearn.decomposition import LatentDirichletAllocation 
+from sklearn.decomposition import TruncatedSVD 
+from sklearn.decomposition import NMF
