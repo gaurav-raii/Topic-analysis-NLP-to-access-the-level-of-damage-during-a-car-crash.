@@ -63,4 +63,15 @@ terms = cv.get_feature_names()
 print('{:.<22s}{:>6d}'.format("Number of Reviews", len(reviews))) 
 print('{:.<22s}{:>6d}'.format("Number of Terms", len(terms)))
 
+term_sums = tf.sum(axis=0) 
+term_counts = [] 
+for i in range(len(terms)):
+    term_counts.append([terms[i], term_sums[0,i]]) 
+def sortSecond(e):
+    return e[1] 
+term_counts.sort(key=sortSecond, reverse=True) 
+print("\nTerms with Highest Frequency:") 
+for i in range(10):
+    print('{:<15s}{:>5d}'.format(term_counts[i][0], term_counts[i][1])) 
+
 
