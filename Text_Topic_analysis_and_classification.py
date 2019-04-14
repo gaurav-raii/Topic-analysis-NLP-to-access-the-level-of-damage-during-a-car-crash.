@@ -35,3 +35,6 @@ nltk.download('wordnet')
 
 # Increase column width to let pandy read large text columns 
 pd.set_option('max_colwidth', 32000)
+
+# Read California Chardonnay Reviews 
+df = pd.read_excel("C:/Users/gaura/Desktop/stat 656/week 11/week 11 assignment/GMC_Complaints.xlsx")
