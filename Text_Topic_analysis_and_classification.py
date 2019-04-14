@@ -44,3 +44,12 @@ n_reviews = len(df['description'])
 s_words = 'english' 
 ngram = (1,2) 
 reviews = df['description']
+
+# Constants 
+m_features = None # default is None 
+n_topics = 8 # number of topics 
+max_iter = 10 # maximum number of iterations 
+max_df = 0.5 # max proportion of docs/reviews allowed for a term 
+learning_offset = 10. # default is 10 
+learning_method = 'online' # alternative is 'batch' for large files 
+tf_matrix='tfidf'
