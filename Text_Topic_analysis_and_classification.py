@@ -56,4 +56,11 @@ tf_matrix='tfidf'
 
 # Create the Review by Term Frequency Matrix using Custom Analyzer 
 
+ta = TextAnalytics() 
+cv = CountVectorizer(max_df=max_df, min_df=2, max_features=m_features,analyzer=ta.my_analyzer) 
+tf = cv.fit_transform(reviews) 
+terms = cv.get_feature_names() 
+print('{:.<22s}{:>6d}'.format("Number of Reviews", len(reviews))) 
+print('{:.<22s}{:>6d}'.format("Number of Terms", len(terms)))
+
 
