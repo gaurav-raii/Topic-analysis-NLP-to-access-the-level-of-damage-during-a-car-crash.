@@ -55,7 +55,5 @@ learning_method = 'online' # alternative is 'batch' for large files
 tf_matrix='tfidf'
 
 # Create the Review by Term Frequency Matrix using Custom Analyzer 
-# max_df is a limit for terms. If a term has more than this 
-# proportion of documents then that term is dropped. Use max_df=1.0 
-# to eliminate this behavior. Typical values are max_df between 0.5 and 0.95
+
 
