@@ -32,3 +32,6 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger') 
 nltk.download('stopwords') 
 nltk.download('wordnet')
+
+# Increase column width to let pandy read large text columns 
+pd.set_option('max_colwidth', 32000)
