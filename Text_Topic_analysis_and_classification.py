@@ -112,3 +112,5 @@ for i in range(n_reviews):
         if x > max:
             max = x
             topics[i] = j
+            
+#*** Store Topic Scores in rev_score *** 
