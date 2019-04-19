@@ -93,3 +93,7 @@ for i in range(10):
     j = i
     print('{:<15s}{:>8.2f}'.format(term_idf_scores[j][0],  term_idf_scores[j][1]))
     
+uv = LatentDirichletAllocation(n_components=n_topics, max_iter=max_iter,\
+                               learning_method=learning_method, \
+                               learning_offset=learning_offset, \
+                                random_state=12345) 
