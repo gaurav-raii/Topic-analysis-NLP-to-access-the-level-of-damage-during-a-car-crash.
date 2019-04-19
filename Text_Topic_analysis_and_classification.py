@@ -97,3 +97,4 @@ uv = LatentDirichletAllocation(n_components=n_topics, max_iter=max_iter,\
                                learning_method=learning_method, \
                                learning_offset=learning_offset, \
                                 random_state=12345) 
+U = uv.fit_transform(tf) 
