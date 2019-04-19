@@ -98,3 +98,17 @@ uv = LatentDirichletAllocation(n_components=n_topics, max_iter=max_iter,\
                                learning_offset=learning_offset, \
                                 random_state=12345) 
 U = uv.fit_transform(tf) 
+
+# Display the topic selections 
+print("\n********** GENERATED TOPICS **********") 
+TextAnalytics.display_topics(uv.components_, terms, n_terms=15, mask=None)
+# Store topic selection for each doc in topics[] 
+topics = [0] * n_reviews 
+for i in range(n_reviews):
+    max = abs(U[i][0])
+    topics[i] = 0
+    for j in range(n_topics):
+        x = abs(U[i][j])
+        if x > max:
+            max = x
+            topics[i] = j
