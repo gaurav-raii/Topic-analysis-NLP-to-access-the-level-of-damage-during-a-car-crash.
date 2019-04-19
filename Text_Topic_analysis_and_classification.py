@@ -114,3 +114,4 @@ for i in range(n_reviews):
             topics[i] = j
             
 #*** Store Topic Scores in rev_score *** 
+ rev_scores = [] 
