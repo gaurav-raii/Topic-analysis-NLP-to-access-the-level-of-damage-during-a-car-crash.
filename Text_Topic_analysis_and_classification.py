@@ -74,4 +74,22 @@ print("\nTerms with Highest Frequency:")
 for i in range(10):
     print('{:<15s}{:>5d}'.format(term_counts[i][0], term_counts[i][1])) 
 
-
+ # Construct the TF/IDF matrix from the Term Frequency matrix 
+ print("\nConstructing Term/Frequency Matrix using TF-IDF") 
+ # Default for norm is 'l2', use norm=None to supress 
+ tfidf_vect = TfidfTransformer(norm=None, use_idf=True) #set norm=None 
+ # tf matrix is (n_reviews)x(m_terms) 
+ tf = tfidf_vect.fit_transform(tf)
+# Display the terms with the largest TFIDF value 
+term_idf_sums = tf.sum(axis=0) 
+term_idf_scores = [] 
+for i in range(len(terms)):
+    term_idf_scores.append([terms[i], term_idf_sums[0,i]]) 
+print("The Term/Frequency matrix has", tf.shape[0], " rows, and", tf.shape[1], " columns.") 
+print("The Term list has", len(terms), " terms.") 
+term_idf_scores.sort(key=sortSecond, reverse=True) 
+print("\nTerms with Highest TF-IDF Scores:") 
+for i in range(10):
+    j = i
+    print('{:<15s}{:>8.2f}'.format(term_idf_scores[j][0],  term_idf_scores[j][1]))
+    
