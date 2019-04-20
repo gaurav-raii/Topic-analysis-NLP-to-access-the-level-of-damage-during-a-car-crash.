@@ -114,4 +114,10 @@ for i in range(n_reviews):
             topics[i] = j
             
 #*** Store Topic Scores in rev_score *** 
- rev_scores = [] 
+rev_scores = [] 
+for i in range(n_reviews):
+     u = [0] * (n_topics+1)
+     u[0] = topics[i]
+     for j in range(n_topics):
+         u[j+1] = U[i][j]
+     rev_scores.append(u)
