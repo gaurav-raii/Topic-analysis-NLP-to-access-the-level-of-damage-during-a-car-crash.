@@ -121,3 +121,5 @@ for i in range(n_reviews):
      for j in range(n_topics):
          u[j+1] = U[i][j]
      rev_scores.append(u)
+
+# Setup review topics in new pandas dataframe 'df_rev' 
