@@ -130,3 +130,8 @@ for i in range(n_topics):
 df_rev = pd.DataFrame.from_records(rev_scores, columns=cols) 
 df = df.join(df_rev)
 
+# checking for null values
+df[['nthsa_id','Year','make','model','abs','mileage','topic']].isnull().sum(axis='index')
+ 
+#df=df.dropna() ( if we dont want to impute we can just uncomment this )
+
