@@ -142,3 +142,6 @@ df['abs'] = df['abs'].fillna('N')
 
 #Dropping duplicate and unwanted Columns 
 df= df.drop(columns=['nthsa_id','description','topic'])
+
+#normalizing mileage column
+df['mileage'] = df['mileage']  / (df['mileage'].max() - df['mileage'].min())
