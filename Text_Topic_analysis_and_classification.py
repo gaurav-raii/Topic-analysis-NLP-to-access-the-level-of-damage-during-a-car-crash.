@@ -123,3 +123,10 @@ for i in range(n_reviews):
      rev_scores.append(u)
 
 # Setup review topics in new pandas dataframe 'df_rev' 
+cols = ["topic"] 
+for i in range(n_topics):
+    s = "T"+str(i+1)
+    cols.append(s) 
+df_rev = pd.DataFrame.from_records(rev_scores, columns=cols) 
+df = df.join(df_rev)
+
