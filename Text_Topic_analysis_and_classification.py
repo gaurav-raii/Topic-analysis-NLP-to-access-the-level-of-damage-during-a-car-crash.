@@ -139,3 +139,6 @@ df[['nthsa_id','Year','make','model','abs','mileage','topic']].isnull().sum(axis
 df['mileage'] = df['mileage'].fillna(df['mileage'].mean())
 mode = df['abs'].mode()
 df['abs'] = df['abs'].fillna('N')
+
+#Dropping duplicate and unwanted Columns 
+df= df.drop(columns=['nthsa_id','description','topic'])
