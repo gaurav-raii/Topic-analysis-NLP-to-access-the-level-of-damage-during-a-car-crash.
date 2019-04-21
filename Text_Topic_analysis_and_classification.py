@@ -135,3 +135,7 @@ df[['nthsa_id','Year','make','model','abs','mileage','topic']].isnull().sum(axis
  
 #df=df.dropna() ( if we dont want to impute we can just uncomment this )
 
+# imputing mileage and abs columns as only they have missing values
+df['mileage'] = df['mileage'].fillna(df['mileage'].mean())
+mode = df['abs'].mode()
+df['abs'] = df['abs'].fillna('N')
