@@ -160,3 +160,7 @@ df= df.drop(columns=categorical)
 # making arrays of predictor variables and target variable
 X= df.drop(columns=['crashed_Y','crashed_N'])
 Y= df['crashed_Y'].tolist()
+
+# splitting data into test and train
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
