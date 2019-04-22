@@ -145,3 +145,10 @@ df= df.drop(columns=['nthsa_id','description','topic'])
 
 #normalizing mileage column
 df['mileage'] = df['mileage']  / (df['mileage'].max() - df['mileage'].min())
+
+# encoding the categorical data
+def my_encoder(z):
+    for i in z:
+        a=df[i][df[i].notnull()].unique()
+        for col_name in a:
+            df[i+'_'+str(col_name)]= df[i].apply(lambda x: 1 if x==col_name else 0)
