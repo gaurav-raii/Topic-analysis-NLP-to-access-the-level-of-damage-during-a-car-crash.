@@ -156,3 +156,7 @@ def my_encoder(z):
 categorical = ['Year','make','model','abs','crashed']
 my_encoder(categorical)
 df= df.drop(columns=categorical)
+
+# making arrays of predictor variables and target variable
+X= df.drop(columns=['crashed_Y','crashed_N'])
+Y= df['crashed_Y'].tolist()
