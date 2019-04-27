@@ -174,3 +174,12 @@ lm= LogisticRegression()
 model = lm.fit(X_train,Y_train)
 predictions_train= lm.predict(X_train)
 predictions_test= lm.predict(X_test)
+
+from AdvancedAnalytics import logreg
+logreg.display_binary_metrics(lm,X_test,Y_test)
+
+#probablities of crash
+from sklearn import metrics
+
+# probabilities for crash.
+pred_proba_df = pd.DataFrame(lm.predict_log_proba(X_test))
