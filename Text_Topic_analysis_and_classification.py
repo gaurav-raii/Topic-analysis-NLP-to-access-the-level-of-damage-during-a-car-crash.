@@ -168,3 +168,9 @@ from sklearn.linear_model import LogisticRegression
 X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.3)
 print(X_train.shape,len(Y_train))
 print(X_test.shape,len(Y_test))
+
+# model fitting
+lm= LogisticRegression()
+model = lm.fit(X_train,Y_train)
+predictions_train= lm.predict(X_train)
+predictions_test= lm.predict(X_test)
