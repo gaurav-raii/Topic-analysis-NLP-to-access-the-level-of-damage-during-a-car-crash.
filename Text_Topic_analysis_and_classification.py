@@ -164,3 +164,7 @@ Y= df['crashed_Y'].tolist()
 # splitting data into test and train
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.3)
+print(X_train.shape,len(Y_train))
+print(X_test.shape,len(Y_test))
