@@ -183,3 +183,12 @@ from sklearn import metrics
 
 # probabilities for crash.
 pred_proba_df = pd.DataFrame(lm.predict_log_proba(X_test))
+
+#checking accuracy on different thresholds.
+threshold_list = [0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,.7,.75,.8,.85,.9,.95,.99]
+for i in threshold_list:
+    print ('\n******** For i = {} ******'.format(i))
+    Y_test_pred = pred_proba_df.applymap(lambda x: 1 if x>i else 0)
+    test_accuracy = metrics.accuracy_score(Y_test.as_matrix().reshape(Y_test.as_matrix().size,1),
+                                           Y_test_pred.iloc[:,1].as_matrix().reshape(Y_test_pred.iloc[:,1].as_matrix().size,1))
+    print('Our testing accuracy is {}'.format(test_accuracy))
